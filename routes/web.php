@@ -15,13 +15,12 @@ use App\Http\Controllers\HomeController;
 
 Route::any('/', [HomeController::class, 'index']);
 
-Route::prefix('marcas', function() {
-    Route::post('create', [MarcasController::class, 'createMarcas']);
-});
-
-
 
 Route::prefix('api', function() {
+    Route::prefix('marcas', function() {
+        Route::post('create', [MarcasController::class, 'createMarcas']);
+    });
+
     Route::prefix('auth', function() {
         Route::post('login', [LoginController::class, 'auth']);
     });
