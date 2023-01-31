@@ -25,4 +25,10 @@ class MarcasController {
         );
     }
 
+    public function updateMarcasEstado() {
+        return $this->marcasModel->updateMarcasEstadoDB(
+            TBMARCAS::formFields()
+        );
+    }
+
 }

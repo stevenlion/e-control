@@ -8,6 +8,7 @@ class TBMARCAS implements \JsonSerializable {
     private ?string $TB_MARCAS_NOMBRE_DE_LA_MARCA = null;
     private ?int $TB_CLIENTE_CODIGO_CLIENTE_FK = null;
     private ?string $TB_MARCAS_USUARIO = null;
+    private ?int $TB_MARCAS_ESTADO = null;
     private ?string $TB_MARCAS_FECHA_DE_CREACION = null;
 
     public function __construct() {
@@ -35,6 +36,10 @@ class TBMARCAS implements \JsonSerializable {
 
         $tbmarcas->setTBMARCASUSUARIO(
             isset(request->TB_MARCAS_USUARIO) ? request->TB_MARCAS_USUARIO : null
+        );
+
+        $tbmarcas->setTBMARCASESTADO(
+            isset(request->TB_MARCAS_ESTADO) ? request->TB_MARCAS_ESTADO : null
         );
 
         $tbmarcas->setTBMARCASFECHADECREACION(
@@ -77,6 +82,15 @@ class TBMARCAS implements \JsonSerializable {
 
     public function setTBMARCASUSUARIO(?string $TB_MARCAS_USUARIO): TBMARCAS {
         $this->TB_MARCAS_USUARIO = $TB_MARCAS_USUARIO;
+        return $this;
+    }
+
+    public function getTBMARCASESTADO(): ?int {
+        return $this->TB_MARCAS_ESTADO;
+    }
+
+    public function setTBMARCASESTADO(?int $TB_MARCAS_ESTADO): TBMARCAS {
+        $this->TB_MARCAS_ESTADO = $TB_MARCAS_ESTADO;
         return $this;
     }
 

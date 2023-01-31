@@ -28,4 +28,11 @@ class MarcasModel {
         ])->execute();
     }
 
+    public function updateMarcasEstadoDB(TBMARCAS $tbmarcas) {
+        return DB::call('update_estado_marca', [
+            $tbmarcas->getTBMARCASESTADO(),
+            $tbmarcas->getCODIGOMARCAPK()
+        ])->execute();
+    }
+
 }
