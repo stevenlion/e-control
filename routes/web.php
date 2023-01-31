@@ -20,7 +20,7 @@ Route::prefix('api', function() {
     Route::prefix('marcas', function() {
         Route::post('create', [MarcasController::class, 'createMarcas']);
         Route::post('update', [MarcasController::class, 'updateMarcas']);
-        Route::post('status', [MarcasController::class, 'updateMarcasEstado']);
+        Route::post('inhabilitar', [MarcasController::class, 'updateMarcasInhabilitar']);
     });
 
     Route::prefix('auth', function() {

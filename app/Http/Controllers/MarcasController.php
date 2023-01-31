@@ -25,8 +25,8 @@ class MarcasController {
         );
     }
 
-    public function updateMarcasEstado() {
-        return $this->marcasModel->updateMarcasEstadoDB(
+    public function updateMarcasInhabilitar() {
+        return $this->marcasModel->updateMarcasInhabilitarDB(
             TBMARCAS::formFields()
         );
     }
