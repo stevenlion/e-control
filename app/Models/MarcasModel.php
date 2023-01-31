@@ -21,7 +21,7 @@ class MarcasModel {
 
 
     public function updateMarcasDB(TBMARCAS $tbmarcas) {
-        return DB::call('update_inhabilitar_marca', [
+        return DB::call('update_marca', [
             $tbmarcas->getTBMARCASNOMBREDELAMARCA(),
             $tbmarcas->getTBCLIENTECODIGOCLIENTEFK(),
             $tbmarcas->getCODIGOMARCAPK()
@@ -29,7 +29,7 @@ class MarcasModel {
     }
 
     public function updateMarcasInhabilitarDB(TBMARCAS $tbmarcas) {
-        return DB::call('update_estado_marca', [
+        return DB::call('update_inhabilitar_marca', [
             $tbmarcas->getTBMARCASESTADO(),
             $tbmarcas->getCODIGOMARCAPK()
         ])->execute();
