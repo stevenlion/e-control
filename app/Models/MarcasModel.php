@@ -19,4 +19,13 @@ class MarcasModel {
         ])->execute();
     }
 
+
+    public function updateMarcasDB(TBMARCAS $tbmarcas) {
+        return DB::call('update_marca', [
+            $tbmarcas->getTBMARCASNOMBREDELAMARCA(),
+            $tbmarcas->getTBCLIENTECODIGOCLIENTEFK(),
+            $tbmarcas->getCODIGOMARCAPK()
+        ])->execute();
+    }
+
 }

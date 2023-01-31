@@ -19,6 +19,7 @@ Route::any('/', [HomeController::class, 'index']);
 Route::prefix('api', function() {
     Route::prefix('marcas', function() {
         Route::post('create', [MarcasController::class, 'createMarcas']);
+        Route::post('update', [MarcasController::class, 'updateMarcas']);
     });
 
     Route::prefix('auth', function() {
