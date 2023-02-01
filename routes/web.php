@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientesControllers;
 use App\Http\Controllers\MarcasController;
 use LionRoute\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -21,6 +22,10 @@ Route::prefix('api', function() {
         Route::post('create', [MarcasController::class, 'createMarcas']);
         Route::post('update', [MarcasController::class, 'updateMarcas']);
         Route::post('inhabilitar', [MarcasController::class, 'updateMarcasInhabilitar']);
+    });
+
+    Route::prefix('clientes', function() {
+        Route::post('select', [ClientesControllers::class, 'readClientes']);
     });
 
     Route::prefix('auth', function() {

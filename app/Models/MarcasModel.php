@@ -28,6 +28,13 @@ class MarcasModel {
         ])->execute();
     }
 
+    public function readMarcasByIdDB(TBMARCAS $tbmarcas) {
+        return DB::table('TB_MARCAS')
+            ->select(DB::count('*'))
+            ->where(DB::equalTo('CODIGO_MARCA_PK'), $tbmarcas->getId())
+            ->get();
+    }
+
     public function updateMarcasInhabilitarDB(TBMARCAS $tbmarcas) {
         return DB::call('update_inhabilitar_marca', [
             $tbmarcas->getTBMARCASESTADO(),
